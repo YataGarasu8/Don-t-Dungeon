@@ -15,11 +15,12 @@ public class PlayerController : MonoBehaviour
     public Transform cameraContainer;
     public float minXLook;//최소X값
     public float maxXLook;//최대X값
-    float camCurXRot;
     public float lookSensitivity;//민감도
+    float camCurXRot;
     Vector2 mouseDelta;
+    
 
-    private Rigidbody _rigidbody;
+    public Rigidbody _rigidbody;
     // Start is called before the first frame update
     private void Awake()
     {
@@ -90,7 +91,7 @@ public class PlayerController : MonoBehaviour
         };
         for(int i = 0; i < rays.Length; i++)
         {
-            if (Physics.Raycast(rays[i], 0.56f, groundLayerMask))
+            if (Physics.Raycast(rays[i], 0.65f, groundLayerMask))
             {
                 return true;
             }
