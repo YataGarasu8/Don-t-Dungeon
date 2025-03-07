@@ -91,11 +91,19 @@ public class PlayerController : MonoBehaviour
         };
         for(int i = 0; i < rays.Length; i++)
         {
-            if (Physics.Raycast(rays[i], 0.65f, groundLayerMask))
+            if (Physics.Raycast(rays[i], 0.65f, groundLayerMask))//점프가 안되면 0.65f(검출 길이)를 조절
             {
                 return true;
             }
         }
         return false;
+    }
+    public void BoostJumpForce(float boost)
+    {
+        jumpForce += boost;
+    }
+    public void RollBackJumpForce(float boost)
+    {
+        jumpForce -= boost;
     }
 }
