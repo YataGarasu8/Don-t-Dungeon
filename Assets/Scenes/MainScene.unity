@@ -1564,7 +1564,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   checkRate: 0.05
-  maxCheckDistance: 50
+  maxCheckDistance: 8
   layerMask:
     serializedVersion: 2
     m_Bits: 128
