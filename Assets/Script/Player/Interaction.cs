@@ -15,27 +15,22 @@ public class Interaction : MonoBehaviour
     IInteractable curInteractable;
 
     public TextMeshProUGUI promptText;
-    Camera camera;
+    Camera rayCamera;
 
     void Start()
     {
-        camera = Camera.main;
+        rayCamera = Camera.main;
     }
     void Update()
     {
         ObjectCheck();
-    }
-    void SetPromptText()
-    {
-        promptText.gameObject.SetActive(true);
-        promptText.text = curInteractable.GetInteractPrompt();
     }
     void ObjectCheck()
     {
         if (Time.time - lastCheckTime > checkRate)
         {
             lastCheckTime = Time.time;
-            Ray ray = camera.ScreenPointToRay(new Vector3(Screen.width / 2, Screen.height));
+            Ray ray = rayCamera.ScreenPointToRay(new Vector3(Screen.width / 2, Screen.height / 2));
             RaycastHit hit;
 
             if (Physics.Raycast(ray, out hit, maxCheckDistance, layerMask))
@@ -51,9 +46,14 @@ public class Interaction : MonoBehaviour
             {
                 curInteractGameObject = null;
                 curInteractable = null;
-                //promptText.gameObject.SetActive(false);
+                promptText.gameObject.SetActive(false);
             }
         }
+    }
+    void SetPromptText()
+    {
+        promptText.gameObject.SetActive(true);
+        promptText.text = curInteractable.GetInteractPrompt();
     }
     public void OnInteractInput(InputAction.CallbackContext callbackContext)
     {
