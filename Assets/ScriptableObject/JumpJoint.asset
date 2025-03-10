@@ -19,3 +19,5 @@ MonoBehaviour:
   addMoveSpeed: 0
   addJumpForce: 50
   activeTime: 0
+  icon: {fileID: 3473359137553555466, guid: 4c4cbe1aa24519841a87fb9b453f8b84, type: 3}
+  dropPrefab: {fileID: 3324871787075170159, guid: 8a0a6e42f618ff2429346aefdab8184b, type: 3}

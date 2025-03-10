@@ -65,21 +65,4 @@ public class Interaction : MonoBehaviour
             promptText.gameObject.SetActive(false);
         }
     }
-    void OnDrawGizmos()
-    {
-        if (rayCamera == null) return;
-
-        Ray ray = rayCamera.ScreenPointToRay(new Vector3(Screen.width / 2, Screen.height / 2));
-        Gizmos.color = Color.green;
-        Gizmos.DrawRay(ray.origin,ray.origin);
-
-        // Ray가 충돌한 곳에 빨간색 Sphere를 그림
-        RaycastHit hit;
-        if (Physics.Raycast(ray, out hit, maxCheckDistance, layerMask))
-        {
-            Gizmos.color = Color.red;
-            Gizmos.DrawSphere(hit.point, 0.1f); // 충돌 지점에 작은 구체 표시
-        }
-    }
-
 }
