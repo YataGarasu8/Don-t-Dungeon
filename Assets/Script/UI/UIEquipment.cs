@@ -4,15 +4,9 @@ using UnityEngine;
 
 public class UIEquipment : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    void AddItem()
     {
-        
-    }
+        ItemDate date = CharacterManager.Instance.Player.itemDate;
 
-    // Update is called once per frame
-    void Update()
-    {
-        
     }
 }

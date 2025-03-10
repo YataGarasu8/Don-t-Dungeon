@@ -15,6 +15,7 @@ public class ItemDate : ScriptableObject
     public float addMoveSpeed;
     public float addJumpForce;
     public float activeTime;
-
+    public Sprite icon;
+    public GameObject dropPrefab;
 
 }
