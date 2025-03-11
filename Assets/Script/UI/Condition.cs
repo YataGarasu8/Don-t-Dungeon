@@ -15,8 +15,6 @@ public class Condition : MonoBehaviour
     {
         curValue = starValue;
     }
-
-  
     void Update()
     {
         uiBar.fillAmount = GetPercentage();

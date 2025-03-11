@@ -19,7 +19,6 @@ public class ItemObject : MonoBehaviour, IInteractable
 
     public void OnInteract()
     {
-
         CharacterManager.Instance.Player.itemDate = itemDate;
         CharacterManager.Instance.Player.addItem?.Invoke();
         Destroy(gameObject);

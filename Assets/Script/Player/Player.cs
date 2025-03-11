@@ -6,7 +6,8 @@ using UnityEngine;
 public class Player : MonoBehaviour
 {
     public PlayerController playerController;
-    public Condition condition;
+    public PlayerCondition playerCondition;
+    public UIEquipment uIEquipment;
 
     public ItemDate itemDate;
     public Action addItem;
@@ -17,5 +18,6 @@ public class Player : MonoBehaviour
     {
         CharacterManager.Instance.Player = this;
         playerController = GetComponent<PlayerController>();
+        playerCondition = GetComponent<PlayerCondition>();
     }
 }

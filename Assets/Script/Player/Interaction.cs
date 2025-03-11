@@ -60,6 +60,7 @@ public class Interaction : MonoBehaviour
         if (callbackContext.phase == InputActionPhase.Started && curInteractable != null)
         {
             curInteractable.OnInteract();
+            //CharacterManager.Instance.Player.uIEquipment.ItemGet(date);
             curInteractGameObject = null;
             curInteractable = null;
             promptText.gameObject.SetActive(false);
