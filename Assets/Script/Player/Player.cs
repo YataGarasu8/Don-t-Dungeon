@@ -7,7 +7,6 @@ public class Player : MonoBehaviour
 {
     public PlayerController playerController;
     public PlayerCondition playerCondition;
-    public UIEquipment uIEquipment;
 
     public ItemDate itemDate;
     public Action addItem;
