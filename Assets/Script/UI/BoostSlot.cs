@@ -15,13 +15,13 @@ public class BoostSlot : MonoBehaviour
     {
         boostMark.gameObject.SetActive(false);
     }
-    void Set(ItemDate date)
+    public void Set()
     {
         boostMark.gameObject.SetActive(true);
-        boostIcon.sprite = date.icon;
+        boostIcon.sprite = item.icon;
         CharacterManager.Instance.Player.playerController.BoostJumpForce(item.addJumpForce);
     }
-    void Clear()
+    public void Clear()
     {
         CharacterManager.Instance.Player.playerController.RollBackJumpForce(item.addJumpForce);
         boostMark.gameObject.SetActive(false);

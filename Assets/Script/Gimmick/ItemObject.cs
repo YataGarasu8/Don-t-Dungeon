@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using static UnityEditor.Progress;
 
 public interface IInteractable
 {
@@ -25,7 +26,9 @@ public class ItemObject : MonoBehaviour, IInteractable
             CharacterManager.Instance.Player.addItem?.Invoke();
         }
         else if (itemDate.type == ItemType.Boost)
-        { }
+        {
+            //CharacterManager.Instance.Player.uIEquipment.Boosted(itemDate);//결국 어떤 문제일까...
+        }
         Destroy(gameObject);
     }
 }

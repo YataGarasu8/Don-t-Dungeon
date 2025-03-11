@@ -9,13 +9,13 @@ public class EquipSlot : MonoBehaviour
     public Image equipIcon;
 
     // Start is called before the first frame update
-    void Set(ItemDate date)
+    public void Set(ItemDate date)
     {
         equipIcon.sprite = item.icon;
         equipIcon.gameObject.SetActive(true);
         CharacterManager.Instance.Player.playerController.BoostJumpForce(item.addJumpForce);
     }
-    void Clear()
+    public void Clear()
     {
         if (equipIcon != null)
         {

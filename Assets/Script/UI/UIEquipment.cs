@@ -33,6 +33,13 @@ public class UIEquipment : MonoBehaviour
         ItemDate date = CharacterManager.Instance.Player.itemDate;
 
     }
+    public void Boosted(ItemDate item)
+    {
+        boostSlot.item = item;
+        boostSlot.Set();
+        StartCoroutine(RollBackBoost(item));
+        boostSlot.Clear();
+    }
     void ThrowTtem(ItemDate date)
     {
         Instantiate(date.dropPrefab, dropPosition.position, Quaternion.Euler(Vector3.one * Random.value * 360));
